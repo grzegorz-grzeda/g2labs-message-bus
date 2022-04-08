@@ -1,22 +1,25 @@
 #include <stdio.h>
 #include <message_bus.h>
 
-void cb1(const void *payload, size_t size)
+void cb1(uint16_t message_id, const void *payload, size_t size)
 {
+    (void) message_id;
     (void) payload;
     (void) size;
     printf("Callback 1\n");
 }
 
-void cb2(const void *payload, size_t size)
+void cb2(uint16_t message_id, const void *payload, size_t size)
 {
+    (void) message_id;
     (void) payload;
     (void) size;
     printf("Callback 2\n");
 }
 
-void cb3(const void *payload, size_t size)
+void cb3(uint16_t message_id, const void *payload, size_t size)
 {
+    (void) message_id;
     (void) payload;
     (void) size;
     printf("Callback 3\n");
@@ -26,8 +29,9 @@ void cb3(const void *payload, size_t size)
     printf("--> sending message id:1\n");
 }
 
-void cb4(const void *payload, size_t size)
+void cb4(uint16_t message_id, const void *payload, size_t size)
 {
+    (void) message_id;
     (void) payload;
     (void) size;
     printf("Callback 4\n");

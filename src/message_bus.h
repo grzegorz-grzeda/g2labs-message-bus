@@ -5,7 +5,7 @@
 #include <stdbool.h>
 #include <stddef.h>
 
-typedef void (*message_callback)(const void *payload, size_t size);
+typedef void (*message_callback)(uint16_t message_id, const void *payload, size_t size);
 
 bool register_listener(uint16_t message_id, message_callback callback);
 

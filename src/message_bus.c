@@ -110,7 +110,7 @@ void notify_listeners(void)
     while (message) {
         for (struct listener *listener = listeners.first; listener != NULL; listener = listener->next) {
             if (message->id == listener->id) {
-                listener->callback(message->payload, message->size);
+                listener->callback(message->id, message->payload, message->size);
             }
         }
         struct message *next_message = message->next;
