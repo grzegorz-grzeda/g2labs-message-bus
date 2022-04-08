@@ -1,18 +1,15 @@
 #!/bin/bash
 build_dir="build/"
 
-PLATFORM='x64'
+G2LABS_MESSAGE_BUS_PLATFORM='x64'
 
-echo "Building platform $PLATFORM"
-rm -rf build/$PLATFORM
-mkdir -p build/$PLATFORM
-
-# assemble example fibonacci code
-python3 assembler/g2labs-virtual-machine-assembler.py assembler/examples/fibonacci.g2 -o platform/x64/virtual_machine_source
+echo "Building platform $G2LABS_MESSAGE_BUS_PLATFORM"
+rm -rf build/$G2LABS_MESSAGE_BUS_PLATFORM
+mkdir -p build/$G2LABS_MESSAGE_BUS_PLATFORM
 
 # build project
-cd build/$PLATFORM
-PLATFORM=$PLATFORM cmake ../..
+cd build/$G2LABS_MESSAGE_BUS_PLATFORM
+G2LABS_MESSAGE_BUS_PLATFORM=$G2LABS_MESSAGE_BUS_PLATFORM cmake ../..
 cmake --build .
 
 cd -

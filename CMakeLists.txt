@@ -9,6 +9,6 @@ project(g2labs-message-bus C)
 
 add_subdirectory(src)
 
-if(DEFINED ENV{PLATFORM})
-    add_subdirectory(platform/$ENV{PLATFORM})
+if(DEFINED ENV{G2LABS_MESSAGE_BUS_PLATFORM})
+    add_subdirectory(platform/$ENV{G2LABS_MESSAGE_BUS_PLATFORM})
 endif()
